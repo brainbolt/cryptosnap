@@ -78,7 +78,7 @@ function handleResponse(response, body) {
 
 function handleError(type, errorMessage) {
   let ref = db.ref(fbConfig.NODES.LOG_ERROR)
-  push(ref, { errorType: type, errorMessage: errorMessage })
+  push(ref, { errorType: type, errorMessage: errorMessage, date: new Date().valueOf() })
 }
 
 function startLoop(previousLoop, baseUrl, intervalSeconds) {
